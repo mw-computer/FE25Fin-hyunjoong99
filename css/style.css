@@ -6,7 +6,7 @@
 }
 
 body {
-    background-color: #f5f5f5;
+    background-color: #ffffff;
 }
 
 .main_container {
@@ -92,6 +92,7 @@ header {
     align-items: center;
     text-decoration: none;
     color: white;
+    font-weight: bold;
     font-size: 10px;
 }
 
@@ -105,7 +106,7 @@ header {
 }
 
 .icon-wrapper img:first-child {
-    width: 20px;
+    width: 30px;
     height: auto;
 }
 
@@ -123,15 +124,19 @@ header {
     0% {
         transform: scaleX(1);
     }
+
     12.5% {
         transform: scaleX(-1);
     }
+
     50% {
         transform: scaleX(-1);
     }
+
     62.5% {
         transform: scaleX(1);
     }
+
     100% {
         transform: scaleX(1);
     }
@@ -147,6 +152,7 @@ header {
     padding: 0 50px;
     z-index: 2;
     text-align: center;
+    margin-bottom: 78px;
 }
 
 .banner-inner {
@@ -170,13 +176,13 @@ header {
 }
 
 .main-nav {
-    position: absolute;
-    bottom: -100px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 10;
+    position: static;
+    margin: 20px auto;
     width: max-content;
     max-width: 100%;
+    text-align: center;
+    margin-top: -80px;
+    margin-bottom: 100px;
 }
 
 .main-nav ul {
@@ -213,7 +219,6 @@ header {
     box-sizing: border-box;
     border-radius: 0;
     flex-direction: column;
-    overflow: hidden;
 }
 
 .main-nav li a::before {
@@ -297,4 +302,127 @@ header {
 .scroll-top-btn .circle {
     background-color: #00173a;
     color: white;
+}
+
+/* 뉴스, 공지란, 컴공과 */
+.two-container {
+    display: flex;
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.left-box {
+    flex: 1.5;
+    background-color: #ffffff;
+    padding: 20px;
+}
+
+.right-box {
+    flex: 1;
+}
+
+.notice-news {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 15px;
+}
+
+.image-box img {
+    max-width: 100%;
+    height: 660px;
+    display: block;
+}
+
+.overlay-text {
+    position: absolute;
+    /* 절대 위치 */
+    top: 40px;
+    /* 위에서 20px 떨어짐 */
+    left: 50px;
+    /* 왼쪽에서 20px 떨어짐 */
+    color: white;
+    /* 흰색 텍스트 */
+    padding: 10px;
+    border-radius: 8px;
+    max-width: 80%;
+}
+
+.overlay-text2 {
+    position: absolute;
+    /* 절대 위치 */
+    top: 125px;
+    /* 위에서 20px 떨어짐 */
+    left: 50px;
+    /* 왼쪽에서 20px 떨어짐 */
+    color: rgb(224, 224, 224);
+    /* 흰색 텍스트 */
+    padding: 10px;
+    border-radius: 8px;
+    max-width: 80%;
+}
+
+.right-box .image-box {
+    position: relative;
+    /* 상대 위치 기준 */
+}
+
+.button-grid {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	row-gap: 20px;
+	column-gap: 20px;
+	margin-top: 40px;
+	padding: 0;
+	list-style: none;
+	max-width: 400px;
+}
+
+.button-grid li {
+	background-color: #4fb0ff00;
+	border: 1px solid white;
+	transition: background-color 0.3s;
+}
+
+.button-grid li:hover {
+	background-color: #1c90d4;
+}
+
+.button-grid a {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 12px 20px;
+	color: white;
+	text-decoration: none;
+	font-weight: bold;
+	font-size: 16px;
+}
+
+.button-grid .left {
+	display: flex;
+	align-items: center;
+}
+
+.button-grid i {
+	margin-right: 8px;
+}
+
+.button-grid .right {
+	font-size: 20px;
+	margin-left: 10px;
+	display: inline-block;
+	transition: transform 0.3s ease;
+}
+
+.button-grid li:hover .right {
+	animation: moveArrow 0.5s ease infinite alternate;
+}
+
+@keyframes moveArrow {
+	0% {
+		transform: translateX(0);
+	}
+	100% {
+		transform: translateX(5px);
+	}
 }
