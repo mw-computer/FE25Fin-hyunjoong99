@@ -1,5 +1,108 @@
-@
+html {
+    font-size: 16px;
+}
+
+/* 화면 너비가 1200px 이하일 때 */
+@media screen and (max-width:1200px) {
+    html {
+    font-size: 14px;
+    }
+}
+
+/* 화면 너비가 800px 이하일 때 */
+@media screen and (max-width:800px) {
+        html {
+    font-size: 13px;
+    }
+}
+
+/* 화면 너비가 600px 이하일 때 */
+@media screen and (max-width:600px) {
+        html {
+    font-size: 12px;
+    }
+}
+
+/* 화면 너비가 400px 이하일 때 */
+@media screen and (max-width:400px) {
+        html {
+    font-size: 10px;
+    }
+}
 
 * {
-	
+    margin: 0;
+    padding: 0;
+}
+
+#container {
+    background-color: #000000;
+    color: white;
+    position: relative;
+}
+
+#nav {
+    width: 100%;
+    max-width: 1024px;
+
+    margin: 0 auto;
+}
+
+#menu__list {
+    display: table;
+    list-style-type: none;
+    width: 100%;
+    text-align: center;
+}
+
+#menu__menu {
+    display: table-cell;
+    vertical-align: middle;
+    height: 50px;
+}
+
+#menu__menu:hover {
+    background-color: #353535;
+}
+
+#menu__menu:hover #subwrapper {
+    display: block;
+}
+
+#menu__menu:hover #submenu__list {
+    display: table;
+}
+
+#subwrapper {
+    display: none;
+    background-color: #000000;
+    width: 100%;
+    position: absolute;
+    top: 50px;
+    left: 0;
+}
+
+#subnav {
+    width: 100%;
+    max-width: 1024px;
+
+    margin: 0 auto;
+}
+
+#submenu__list {
+    display: none;
+    list-style-type: none;
+    width: 100%;
+    text-align: center;
+}
+
+#submenu__menu {
+    display: table-cell;
+    vertical-align: middle;
+    height: 50px;
+    cursor: pointer;
+}
+
+#submenu__menu:hover {
+    background-color: #353535;
 }

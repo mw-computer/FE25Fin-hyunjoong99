@@ -2,84 +2,110 @@
 <html lang="ko">
 
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>웹화면구현:김똘똘-ㅇㅇㅇ클로닝
-		//TODO: 타이틀에 본인 이름 넣기
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>
+		웹화면구현:김현중-목원대 컴공 페이지 클로닝
 	</title>
-	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="./css/style.css" />
 </head>
 
 <body>
-	<nav>
-		<div class="container">
-			//TODO: 메뉴 완성하기 (상단메뉴바 또는 사이드메뉴바) + 화면 사이즈에 따라 반응형으로 변경되도록 구현하기
-			<ul>
-				<li>
-					<a href="#">메뉴 1 </a>
-						<ul>
-							<li><a href="#">서브 메뉴 1</a></li>
-							<li><a href="#">서브 메뉴 1</a></li>
-							<li><a href="#">서브 메뉴 1</a></li>
-						</ul>
+
+	<div id="container">
+		<nav id="nav">
+			<ul id="menu__list">
+				<li id="menu__menu">
+					메뉴 1
+					<div id="subwrapper">
+						<nav id="subnav">
+							<ul id="submenu__list">
+								<li id="submenu__menu"><a href="#"> 서브메뉴 1 </a></li>
+								<li id="submenu__menu">서브메뉴 2</li>
+								<li id="submenu__menu">서브메뉴 3</li>
+							</ul>
+						</nav>
+					</div>
 				</li>
-				<li>
-					<a href="#">메뉴 2 </a>
-						<ul>
-							<li><a href="#">서브 메뉴 1</a></li>
-							<li><a href="#">서브 메뉴 1</a></li>
-							<li><a href="#">서브 메뉴 1</a></li>
-						</ul>
+
+				<li id="menu__menu">
+					메뉴 2
+					<div id="subwrapper">
+						<nav id="subnav">
+							<ul id="submenu__list">
+								<li id="submenu__menu">서브메뉴 4</li>
+								<li id="submenu__menu">서브메뉴 5</li>
+								<li id="submenu__menu">서브메뉴 6</li>
+							</ul>
+						</nav>
+					</div>
 				</li>
-				<li>
-					<a href="#">메뉴 3 </a>
-						<ul>
-							<li><a href="#">서브 메뉴 1</a></li>
-							<li><a href="#">서브 메뉴 1</a></li>
-							<li><a href="#">서브 메뉴 1</a></li>
-						</ul>
+
+				<li id="menu__menu">
+					메뉴 3
+					<div id="subwrapper">
+						<nav id="subnav">
+							<ul id="submenu__list">
+								<li id="submenu__menu">서브메뉴 7</li>
+								<li id="submenu__menu">서브메뉴 8</li>
+								<li id="submenu__menu">서브메뉴 9</li>
+							</ul>
+						</nav>
+					</div>
 				</li>
-				<li>
-					<a href="#">메뉴 4 </a>
-						<ul>
-							<li><a href="#">서브 메뉴 1</a></li>
-							<li><a href="#">서브 메뉴 1</a></li>
-							<li><a href="#">서브 메뉴 1</a></li>
-						</ul>
+
+				<li id="menu__menu">
+					메뉴 4
+					<div id="subwrapper">
+						<nav id="subnav">
+							<ul id="submenu__list">
+								<li id="submenu__menu">서브메뉴 10</li>
+								<li id="submenu__menu">서브메뉴 11</li>
+								<li id="submenu__menu">서브메뉴 12</li>
+							</ul>
+						</nav>
+					</div>
 				</li>
+
 			</ul>
-		</div>
-	</nav>
+		</nav>
+	</div>
+
 	<main>
 		<div class="container">
 			<h1>웹화면 구현</h1>
 			//TODO: 여기에 본인이 구현하고자 하는 내용을 작성하세요.
 		</div>
 	</main>
+
 	<section>
 		<div class="container">
-			<h2>섹션1</h2>
+			<h2>섹션 1</h2>
 			//TODO: 여기에 본인이 구현하고자 하는 내용을 작성하세요.
 		</div>
 	</section>
-		<section>
-		<div class="container">
-			<h2>섹션2</h2>
-			//TODO: 여기에 본인이 구현하고자 하는 내용을 작성하세요.
-		</div>
-	</section>
+
 	<section>
 		<div class="container">
-			<h2>섹션3</h2>
+			<h2>섹션 2</h2>
 			//TODO: 여기에 본인이 구현하고자 하는 내용을 작성하세요.
 		</div>
 	</section>
+
 	<section>
 		<div class="container">
-			<h2>섹션4</h2>
+			<h2>섹션 3</h2>
 			//TODO: 여기에 본인이 구현하고자 하는 내용을 작성하세요.
 		</div>
 	</section>
+
+	<section>
+		<div class="container">
+			<h2>섹션 4</h2>
+			//TODO: 여기에 본인이 구현하고자 하는 내용을 작성하세요.
+		</div>
+	</section>
+
 	<footer>
 		<div class="container">
 			<p>© 2023 김똘똘. All rights reserved.</p>
@@ -87,6 +113,8 @@
 			//FIXME: 특히, 가져온 그림에 대한 저작권 표시를 반드시 작성하세요.
 		</div>
 	</footer>
+
+
 </body>
 
 </html>
