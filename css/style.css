@@ -45,7 +45,7 @@ header {
 }
 
 .logo-container img {
-    height: 34x;
+    height: 34px;
     transform: translate(-10px, 0px);
 }
 
@@ -61,7 +61,7 @@ header {
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    padding-left: 250px;
+    padding-left: 150px;
 }
 
 .top-nav ul {
@@ -111,7 +111,7 @@ header {
 
 .spinning-star {
     position: absolute;
-    bottom: 0\px;
+    bottom: 0px;
     right: -5px;
     width: 10px;
     height: 10px;
@@ -123,19 +123,15 @@ header {
     0% {
         transform: scaleX(1);
     }
-
     12.5% {
         transform: scaleX(-1);
     }
-
     50% {
         transform: scaleX(-1);
     }
-
     62.5% {
         transform: scaleX(1);
     }
-
     100% {
         transform: scaleX(1);
     }
@@ -301,8 +297,4 @@ header {
 .scroll-top-btn .circle {
     background-color: #00173a;
     color: white;
-}
-
-.icon-btn:hover .circle {
-    background-color: #1e7edb;
 }
