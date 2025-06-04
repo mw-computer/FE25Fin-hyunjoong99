@@ -12,8 +12,8 @@
 		integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
 		crossorigin="anonymous" referrerpolicy="no-referrer">
 </head>
-
 <body>
+	<!-- 헤더 왼/중앙 및 백그라운드 이미지-->
 	<div class="main_container">
 		<img src="/images/background.jpg" alt="배경 이미지" class="bg">
 		<header>
@@ -31,14 +31,18 @@
 					<li><a href="#">커뮤니티</a></li>
 				</ul>
 			</nav>
+
+			<!-- 헤더 우상단 -->
 			<div class="top_icons">
 				<a href="#" class="icon-with-label">
 					<img src="images/login_white.png" alt="로그인">
 					<span>로그인</span>
 				</a>
-				<a href="#" class="icon-with-label site-icon">
-					<img src="images/whiteschool.png" alt="교내사이트">
-					<img src="images/star.png" alt="별" class="spinning-star">
+				<a href="#" class="icon-with-label">
+					<div class="icon-wrapper">
+						<img src="images/whiteschool.png" alt="교내사이트">
+						<img src="images/star.png" class="spinning-star" alt="별">
+					</div>
 					<span>교내사이트</span>
 				</a>
 				<a href="#"><img src="images/top_menu3.png" alt="메뉴"></a>
@@ -46,6 +50,7 @@
 			</div>
 		</header>
 
+		<!-- 메인 -->
 		<section class="banner">
 			<div class="banner-inner">
 				<div class="banner-text">
@@ -65,6 +70,19 @@
 			</div>
 		</section>
 
+		<!-- 화면 오른쪽 버튼 -->
+		<div class="side-icons">
+			<a href="#main-services" class="icon-btn" title="주요서비스">
+				<div class="circle">주요<br>서비스</div>
+			</a>
+			<a href="#academics" class="icon-btn" title="학사">
+				<div class="circle">학사</div>
+			</a>
+			<button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="icon-btn scroll-top-btn" title="위로">
+				<div class="circle">↑</div>
+			</button>
+		</div>
+
 		<footer>
 			<div class="container">
 				<p>© 2025 김현중. All rights reserved.</p>
@@ -73,6 +91,7 @@
 			</div>
 		</footer>
 
+		<script src="./js/script.js"></script>
 </body>
 
 </html>

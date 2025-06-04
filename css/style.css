@@ -41,12 +41,12 @@ header {
 .logo-container {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 0px;
 }
 
 .logo-container img {
-    height: 35px;
-    transform: translate(-5px, 5px);
+    height: 34x;
+    transform: translate(-10px, 0px);
 }
 
 .logo-name {
@@ -59,14 +59,15 @@ header {
 /* 헤더 메뉴들 */
 .top-nav {
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
+    padding-left: 250px;
 }
 
 .top-nav ul {
     list-style: none;
     display: flex;
-    gap: 50px;
+    gap: 73px;
     padding: 0;
     margin: 0;
 }
@@ -74,164 +75,234 @@ header {
 .top-nav a {
     color: white;
     text-decoration: none;
-    font-size: 19px;
+    font-size: 18px;
     font-weight: bold;
 }
 
 /* 헤더 오른쪽 메뉴들 */
 .top_icons {
-  display: flex;
-  gap: 15px;
-  align-items: center;
+    display: flex;
+    gap: 15px;
+    align-items: center;
 }
 
 .icon-with-label {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-decoration: none;
-  color: white;
-  font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    font-size: 10px;
 }
 
 .icon-wrapper {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 30px;
-  height: auto;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20px;
+    height: auto;
 }
 
 .icon-wrapper img:first-child {
-  width: 30px;
-  height: auto;
+    width: 20px;
+    height: auto;
 }
 
 .spinning-star {
-  position: absolute;
-  bottom: 40px;
-  right: 185px;
-  width: 10px;
-  height: 10px;
-  animation: flip-delay 8s linear infinite;
-  transform-origin: center;
+    position: absolute;
+    bottom: 0\px;
+    right: -5px;
+    width: 10px;
+    height: 10px;
+    animation: flip-delay 8s linear infinite;
+    transform-origin: center;
 }
 
 @keyframes flip-delay {
-  0%   { transform: scaleX(1); }
-  12.5% { transform: scaleX(-1); }
-  50%  { transform: scaleX(-1); }
-  62.5% { transform: scaleX(1); }
-  100% { transform: scaleX(1); }
+    0% {
+        transform: scaleX(1);
+    }
+
+    12.5% {
+        transform: scaleX(-1);
+    }
+
+    50% {
+        transform: scaleX(-1);
+    }
+
+    62.5% {
+        transform: scaleX(1);
+    }
+
+    100% {
+        transform: scaleX(1);
+    }
 }
 
 /* 가운대 배너? 메인? */
 .banner {
-  height: 430px;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 0 50px;
-  z-index: 2;
-  text-align: center;
+    height: 430px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 50px;
+    z-index: 2;
+    text-align: center;
 }
 
 .banner-inner {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .banner-text {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 45px;
-  font-weight: bold;
-  line-height: 1.2;
-  margin: 0;
-  color: white;
-  z-index: 10;
-  white-space: nowrap;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 45px;
+    font-weight: bold;
+    line-height: 1.2;
+    margin: 0;
+    color: white;
+    z-index: 10;
+    white-space: nowrap;
 }
 
 .main-nav {
-  position: absolute;
-  bottom: -100px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 10;
-  width: max-content;
-  max-width: 100%;
+    position: absolute;
+    bottom: -100px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    width: max-content;
+    max-width: 100%;
 }
 
 .main-nav ul {
-  list-style: none;
-  display: flex;
-  justify-content: center;
-  padding: 0;
-  margin: 0;
-  flex-wrap: nowrap;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    flex-wrap: nowrap;
 }
 
 .main-nav li {
-  margin: 0;
+    margin: 0;
 }
 
 .main-nav li:not(:last-child) a {
-  border-right: 1px solid rgba(255, 255, 255, 0.4);
+    border-right: 1px solid rgba(255, 255, 255, 0.4);
 }
 
 .main-nav li a {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 190px;
-  height: 190px;
-  background-color: rgba(0, 0, 0, 0.438);
-  color: white;
-  text-decoration: none;
-  font-size: 18px;
-  font-weight: bold;
-  text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease, background-color 0.3s ease;
-  box-sizing: border-box;
-  border-radius: 0;
-  flex-direction: column;
-  overflow: hidden;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 190px;
+    height: 190px;
+    background-color: rgba(0, 0, 0, 0.438);
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease, background-color 0.3s ease;
+    box-sizing: border-box;
+    border-radius: 0;
+    flex-direction: column;
+    overflow: hidden;
 }
 
 .main-nav li a::before {
-  content: "";
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background-image: url('/images/mainnav_background.png');
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  z-index: 0;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('/images/mainnav_background.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 0;
 }
 
 .main-nav li a:hover {
-  background-color: rgba(0, 93, 168, 0.9);
-  box-shadow: 0 0 20px 5px rgba(0, 93, 168, 0.7);
-  border: 3px solid rgba(0, 93, 168, 0.8);
-  transform: scale(1.1);
-  z-index: 1;
+    background-color: rgba(0, 93, 168, 0.9);
+    box-shadow: 0 0 20px 5px rgba(0, 93, 168, 0.7);
+    border: 3px solid rgba(0, 93, 168, 0.8);
+    transform: scale(1.1);
+    z-index: 1;
 }
 
 .main-nav li a:hover::before {
-  opacity: 1;
+    opacity: 1;
 }
 
 .main-nav li a i {
-  font-size: 40px;
-  color: white;
-  line-height: 1;
+    font-size: 40px;
+    color: white;
+    line-height: 1;
+}
+
+/* 화면 오른쪽 중앙 아이콘 */
+.side-icons {
+    position: fixed;
+    top: 50%;
+    right: 40px;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    z-index: 9999;
+}
+
+.icon-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 12px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 0;
+    width: 60px;
+    height: 60px;
+}
+
+.icon-btn .circle {
+    background-color: white;
+    color: #001F4D;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 15px;
+    cursor: pointer;
+    user-select: none;
+    text-align: center;
+}
+
+.scroll-top-btn .circle {
+    background-color: #00173a;
+    color: white;
+}
+
+.icon-btn:hover .circle {
+    background-color: #1e7edb;
 }
