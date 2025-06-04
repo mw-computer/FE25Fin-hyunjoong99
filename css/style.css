@@ -38,36 +38,36 @@ header {
 }
 
 /* 헤더 좌측 목원대 로고랑 문구 */
-
 .logo-container {
     display: flex;
-    align-items: center;      /* 수직 가운데 정렬 */
-    gap: 8px;                 /* 로고와 문구 사이 간격 (원하는 만큼 조절 가능) */
+    align-items: center;
+    gap: 8px;
 }
 
 .logo-container img {
-    height: 35px;             /* 이미지 크기 조절 (원하는 크기로 변경) */
+    height: 35px;
+    transform: translate(-5px, 5px);
 }
 
 .logo-name {
     font-size: 20px;
     font-weight: bold;
-    color: white;             /* 배경색에 맞게 색상 설정 */
-    white-space: nowrap;      /* 줄바꿈 방지 */
+    color: white;
+    white-space: nowrap;
 }
 
 /* 헤더 메뉴들들 */
 
 .top-nav {
     display: flex;
-    justify-content: center;  /* 가로 중앙 정렬 */
-    align-items: center;      /* 수직 정렬 (필요한 경우) */
+    justify-content: center;
+    align-items: center;
 }
 
 .top-nav ul {
     list-style: none;
     display: flex;
-    gap: 50px;                /* 메뉴 항목 간 거리 조절 */
+    gap: 50px;
     padding: 0;
     margin: 0;
 }
@@ -81,18 +81,90 @@ header {
 
 /* 가운대 배너? 메인? */
 .banner {
-    height: 430px;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0 50px;
-    z-index: 2;
+  height: 430px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 50px;
+  z-index: 2;
+  text-align: center;
+}
+
+/* 새로 추가된 래퍼 */
+.banner-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .banner-text {
-    color: white;
-    font-size: 45px;
-    font-weight: bold;
-    line-height: 1.2;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 45px;
+  font-weight: bold;
+  line-height: 1.2;
+  margin: 0; /* margin 제거 */
+  color: white;
+  z-index: 10;
+  white-space: nowrap;
+}
+
+.main-nav {
+  position: absolute;
+  bottom: -100px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  width: max-content; /* 내용 너비 만큼만 */
+  max-width: 100%;    /* 화면 너비 넘어가지 않게 */
+}
+
+.main-nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+  flex-wrap: nowrap; /* 줄바꿈 원치 않으면 wrap 대신 nowrap */
+}
+
+.main-nav li {
+  margin: 0; /* 간격 제거 */
+}
+
+.main-nav li:not(:last-child) a {
+  border-right: 1px solid rgba(255, 255, 255, 0.4); /* 흰색 반투명 구분선 */
+}
+
+.main-nav li a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 190px;   /* 박스 너비 키움 */
+  height: 190px;  /* 박스 높이 키움 */
+  background-color: rgba(0, 0, 0, 0.438);
+  color: white;
+  text-decoration: none;
+  font-size: 18px; /* 폰트 크기 키움 */
+  font-weight: bold;
+  text-align: center;
+  transition: all 0.3s ease; /* 크기와 색 모두 부드럽게 전환 */
+  box-sizing: border-box;
+  border-radius: 0;
+  flex-direction: column;  /* 세로로 아이콘 위 텍스트 아래 배치 */
+}
+
+.main-nav li a:hover {
+  background-color: rgba(0, 93, 168, 0.9); /* 파란색 반투명 배경 */
+  transform: scale(1.1); /* 박스 크기 확대 */
+  z-index: 1; /* 겹칠 경우 위로 올라오게 */
+}
+
+.main-nav li a i {
+  font-size: 40px; /* 아이콘 크기 */
+  color: white;    /* 아이콘 색상 */
+  line-height: 1;
 }
