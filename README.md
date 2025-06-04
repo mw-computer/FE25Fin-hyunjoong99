@@ -1,7 +1,7 @@
 [![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/p5Ba1kFH)
 # 웹화면구현 파이널 프로젝트
 
-### 컴퓨터공학과 김똘똘
+### 컴퓨터공학과 김현중중
 > 디플로이된 웹사이트 주소 : [https://transcendent-swan-209396.netlify.app/](https://transcendent-swan-209396.netlify.app/)
 
 ### 파이널 프로젝트 요약
