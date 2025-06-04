@@ -78,6 +78,54 @@ header {
     font-weight: bold;
 }
 
+/* 헤더 오른쪽 메뉴들 */
+.top_icons {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.icon-with-label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: white;
+  font-size: 14px;
+}
+
+.icon-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: auto;
+}
+
+.icon-wrapper img:first-child {
+  width: 30px;
+  height: auto;
+}
+
+.spinning-star {
+  position: absolute;
+  bottom: 40px;
+  right: 185px;
+  width: 10px;
+  height: 10px;
+  animation: flip-delay 8s linear infinite;
+  transform-origin: center;
+}
+
+@keyframes flip-delay {
+  0%   { transform: scaleX(1); }
+  12.5% { transform: scaleX(-1); }
+  50%  { transform: scaleX(-1); }
+  62.5% { transform: scaleX(1); }
+  100% { transform: scaleX(1); }
+}
+
 /* 가운대 배너? 메인? */
 .banner {
   height: 430px;
