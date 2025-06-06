@@ -19,17 +19,18 @@
 		<img src="/images/background.jpg" alt="배경 이미지" class="bg">
 		<header>
 			<div class="logo-container">
-				<img src="images/left_top_logo.png" alt="로고" class="hover-img" data-hover="images/left_top_logo_black.png">
+				<img src="images/left_top_logo.png" alt="로고" class="hover-img"
+					data-hover="images/left_top_logo_black.png">
 				<span class="logo-name">컴퓨터공학과</span>
 			</div>
 			<nav class="top-nav">
 				<ul>
-					<li><a href="#">학과안내</a></li>
-					<li><a href="#">교수소개</a></li>
-					<li><a href="#">학사안내</a></li>
-					<li><a href="#">특성화사업</a></li>
-					<li><a href="#">학생활동</a></li>
-					<li><a href="#">커뮤니티</a></li>
+					<li data-menu="info"><a href="#">학과안내</a></li>
+					<li data-menu="prof"><a href="#">교수소개</a></li>
+					<li data-menu="academics"><a href="#">학사안내</a></li>
+					<li data-menu="projects"><a href="#">특성화사업</a></li>
+					<li data-menu="activities"><a href="#">학생활동</a></li>
+					<li data-menu="community"><a href="#">커뮤니티</a></li>
 				</ul>
 			</nav>
 
@@ -41,7 +42,8 @@
 				</a>
 				<a href="#" class="icon-with-label">
 					<div class="icon-wrapper">
-						<img src="images/whiteschool.png" alt="교내사이트" class="hover-img" data-hover="images/blackschool.png">
+						<img src="images/whiteschool.png" alt="교내사이트" class="hover-img"
+							data-hover="images/blackschool.png">
 
 						<img src="images/star.png" class="spinning-star" alt="별">
 					</div>
@@ -51,10 +53,70 @@
 					<img src="images/top_menu3.png" alt="메뉴" class="hover-img" data-hover="images/top_menu3_1.png">
 				</a>
 				<a href="#">
-					<img src="images/mokwon_view_white.png" alt="목원뷰" class="hover-img" data-hover="images/mokwon_view.png">
+					<img src="images/mokwon_view_white.png" alt="목원뷰" class="hover-img"
+						data-hover="images/mokwon_view.png">
 				</a>
 			</div>
 		</header>
+
+		<!-- 헤더 서브메뉴 -->
+		<div class="nav-modal" id="navModal">
+			<div class="modal-content">
+				<div class="modal-column">
+					<h4>학과안내</h4>
+					<ul>
+						<li><a href="#">학과소개</a></li>
+						<li><a href="#">연혁</a></li>
+						<li><a href="#">취업과진로</a></li>
+						<li><a href="#">특성화전략</a></li>
+						<li><a href="#">학과시설</a></li>
+						<li><a href="#">위치 및 연락처</a></li>
+					</ul>
+				</div>
+				<div class="modal-column">
+					<h4>교수소개</h4>
+					<ul>
+						<li><a href="#">컴퓨터공학과</a></li>
+					</ul>
+				</div>
+				<div class="modal-column">
+					<h4>학사안내</h4>
+					<ul>
+						<li><a href="#">교과과정</a></li>
+						<li><a href="#">교과목소개</a></li>
+						<li><a href="#">졸업요구조건</a></li>
+						<li><a href="#">학사일정</a></li>
+						<li><a href="#">직무기술서</a></li>
+					</ul>
+				</div>
+				<div class="modal-column">
+					<h4>특성화사업</h4>
+					<ul>
+						<li><a href="#">SW인재양성사업</a></li>
+						<li><a href="#">SW전문인재양성사업</a></li>
+						<li><a href="#">IPP사업 안내</a></li>
+					</ul>
+				</div>
+				<div class="modal-column">
+					<h4>학생활동</h4>
+					<ul>
+						<li><a href="#">학생회</a></li>
+						<li><a href="#">동아리정보</a></li>
+						<li><a href="#">학술제작품</a></li>
+						<li><a href="#">교내외수상</a></li>
+					</ul>
+				</div>
+				<div class="modal-column">
+					<h4>커뮤니티</h4>
+					<ul>
+						<li><a href="#">공지사항</a></li>
+						<li><a href="#">강의자료실</a></li>
+						<li><a href="#">포토갤러리</a></li>
+						<li><a href="#">홍보동영상</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
 
 		<!-- 메인 -->
 		<section class="banner">
@@ -258,6 +320,9 @@
 				<button class="footer-scroll-top-btn" onclick="scrollFooterToTop()" aria-label="상단으로 이동">↑</button>
 			</div>
 		</footer>
+
+
+ 		<div class="overlay" id="overlay"></div>
 
 		<script src="./js/main.js"></script>
 </body>

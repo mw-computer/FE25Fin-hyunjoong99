@@ -61,33 +61,79 @@ function togglePopup(button) {
     }
 }
 
-// 헤더 이미지 변경 코드
+// 헤더 이미지 변경 코드 및 모달달
 const header = document.querySelector("header");
 const nav = document.querySelector(".top-nav");
-const images = document.querySelectorAll(".hover-img");  // 기존 이미지 hover 처리용
+const modal = document.getElementById("navModal");
+const images = document.querySelectorAll(".hover-img");
 
-// nav에 마우스 올렸을 때 헤더 배경, 텍스트 색 변경 위해 클래스 토글
-nav.addEventListener("mouseenter", () => {
+const overlay = document.querySelector(".overlay");
+const contentToBlur = Array.from(document.querySelectorAll("body > div, body > section"))
+  .filter(el => !el.matches("header, .top-nav, #navModal, .overlay"));
+
+let hideTimeout = null;
+
+function showModal() {
+    if (hideTimeout) {
+        clearTimeout(hideTimeout);
+        hideTimeout = null;
+    }
     header.classList.add("nav-hover");
+    modal.style.display = "flex";
 
-    // 이미지 src 변경 (hover)
     images.forEach(img => {
         const hoverSrc = img.getAttribute("data-hover");
         if (hoverSrc) {
-            img.setAttribute("data-original", img.src); // 원래 경로 저장
+            // 이미 오리지널 이미지가 저장돼 있지 않은 경우만 저장
+            if (!img.hasAttribute("data-original")) {
+                img.setAttribute("data-original", img.src);
+            }
             img.src = hoverSrc;
         }
     });
-});
 
-nav.addEventListener("mouseleave", () => {
+    overlay.classList.add("active");
+    contentToBlur.forEach(el => el.classList.add("blur-background"));
+}
+
+function hideModal() {
     header.classList.remove("nav-hover");
+    modal.style.display = "none";
 
-    // 이미지 src 원복
     images.forEach(img => {
         const originalSrc = img.getAttribute("data-original");
         if (originalSrc) {
             img.src = originalSrc;
         }
     });
-});
+
+    overlay.classList.remove("active");
+    contentToBlur.forEach(el => el.classList.remove("blur-background"));
+}
+
+// relatedTarget 체크 함수 (이동한 요소가 nav, modal 인지만 체크, overlay 제외)
+function isMovingInside(event) {
+    const toElement = event.relatedTarget;
+    if (!toElement) return false;
+    return nav.contains(toElement) || modal.contains(toElement);
+}
+
+function handleMouseLeave(event) {
+    if (!isMovingInside(event)) {
+        if (event.currentTarget === modal) {
+            hideModal();
+            hideTimeout = null;
+        } else {
+            hideTimeout = setTimeout(() => {
+                hideModal();
+                hideTimeout = null;
+            }, 200);
+        }
+    }
+}
+
+nav.addEventListener("mouseenter", showModal);
+nav.addEventListener("mouseleave", handleMouseLeave);
+
+modal.addEventListener("mouseenter", showModal);
+modal.addEventListener("mouseleave", handleMouseLeave);

@@ -34,9 +34,8 @@ header {
     padding: 20px 50px;
     color: white;
     position: relative;
-    z-index: 2;
+    z-index: 10;
     border-bottom: 1px solid rgba(255, 255, 255, 0.151);
-    transition: background-color 0.3s ease, padding 0.3s ease, color 0.3s ease;
 }
 
 header.nav-hover {
@@ -159,6 +158,67 @@ header.nav-hover .icon-with-label {
     100% {
         transform: scaleX(1);
     }
+}
+
+/* 헤더 서브메뉴 모달 */
+.nav-modal {
+    position: absolute;
+    top: 10%;
+    left: 0;
+    width: 100%;
+    background-color: rgb(245, 245, 245);
+    border-top: 1px solid #e4e4e4;
+    display: none;
+    padding: 20px 50px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+    height: 420px; /* 임시 높이, 조정 가능 */
+    display: flex;
+    justify-content: center;
+}
+
+.modal-content {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* 항목 사이 간격 */
+    padding: 5px 40px;
+    background-color: rgb(245, 245, 245);
+}
+
+.modal-column {
+    flex: 0 0 180px;
+    padding: 10px 0px;
+    min-height: 393px;
+}
+
+.modal-column:not(:first-child) {
+    border-left: 1px solid #e0e0e0;
+    padding-left: 20px;
+    margin-left: 10px;
+}
+
+.modal-column h4 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #000;
+    padding-bottom: 5px;
+}
+
+.modal-column ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.modal-column ul li {
+    margin-bottom: 15px;
+}
+
+.modal-column ul li a {
+    font-size: 16px;         /* 항목 텍스트 크기 확대 */
+    line-height: 1.8;        /* 줄 간격을 조금 여유 있게 */
+    text-decoration: none;
+    color: #000;
 }
 
 /* 가운대 배너? 메인? */
@@ -300,7 +360,7 @@ header.nav-hover .icon-with-label {
     display: flex;
     flex-direction: column;
     gap: 15px;
-    z-index: 9999;
+    z-index: 4; /* navModal보다 낮게 */
 }
 
 .icon-btn {
@@ -345,7 +405,7 @@ header.nav-hover .icon-with-label {
     position: fixed;
     display: none;
     background: none;
-    z-index: 2000;
+    z-index: 4;
 }
 
 .popup-content {
@@ -796,4 +856,18 @@ hr {
     border-radius: 50%;
     cursor: pointer;
     outline: 1px solid white;
+}
+
+.overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 5; /* nav, modal보다 아래 */
+  opacity: 0;
+  pointer-events: none;
+}
+
+.overlay.active {
+  opacity: 5;
+  pointer-events: none;
 }
