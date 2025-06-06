@@ -181,17 +181,46 @@
 
 		<!-- 화면 오른쪽 버튼 -->
 		<div class="side-icons">
-			<a href="#main-services" class="icon-btn" title="주요서비스">
+			<button class="icon-btn" data-popup-id="servicePopup" onclick="togglePopup(this)">
 				<div class="circle">주요<br>서비스</div>
-			</a>
-			<a href="#academics" class="icon-btn" title="학사">
+			</button>
+			<button class="icon-btn" data-popup-id="academicPopup" onclick="togglePopup(this)">
 				<div class="circle">학사</div>
-			</a>
-			<button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="icon-btn scroll-top-btn" title="위로">
+			</button>
+			<button class="icon-btn scroll-top-btn" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
 				<div class="circle">↑</div>
 			</button>
 		</div>
 
+		<div id="servicePopup" class="popup-box">
+			<div class="popup-content">
+				<h2>주요서비스</h2>
+				<div class="popup-grid">
+					<button>종합정보시스템</button>
+					<button>수강신청시스템</button>
+					<button>취업정보시스템</button>
+					<button>증명서발급</button>
+					<button>중앙도서관</button>
+					<button>교내연락처</button>
+				</div>
+			</div>
+		</div>
+
+		<div id="academicPopup" class="popup-box">
+			<div class="popup-content">
+				<h2>학사 안내</h2>
+				<div class="popup-grid">
+					<button>학사일정</button>
+					<button>장학</button>
+					<button>휴학</button>
+					<button>복학</button>
+					<button>민원상담</button>
+					<button>학교식당(식단)</button>
+				</div>
+			</div>
+		</div>
+
+		<!-- 푸터 -->
 		<footer>
 			<div class="footer-top">
 				<div class="footer-left">

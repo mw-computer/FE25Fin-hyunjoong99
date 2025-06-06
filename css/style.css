@@ -272,7 +272,7 @@ header {
     line-height: 1;
 }
 
-/* 화면 오른쪽 중앙 아이콘 */
+/* 화면 오른쪽 중앙 아이콘/모달 */
 .side-icons {
     position: fixed;
     top: 50%;
@@ -316,9 +316,105 @@ header {
     text-align: center;
 }
 
+
 .scroll-top-btn .circle {
-    background-color: #00173a;
+    background-color: #1f2a40;
     color: white;
+}
+
+.popup-box {
+    position: fixed;
+    display: none;
+    background: none;
+    z-index: 2000;
+}
+
+.popup-content {
+    background-color: #1f2a40;
+    color: #fff;
+    padding: 40px;
+    width: 500px;
+    max-width: 90%;
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.popup-content h2 {
+    position: relative;
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.popup-content h2::after {
+    content: "";
+    position: absolute;
+    top: 50%; 
+    left: 110%; 
+    transform: translateY(-50%);
+    width: 270px;
+    height: 2px;
+    background: white;
+}
+
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.popup-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.popup-grid button {
+    background-color: transparent;
+    border: 1px solid #ccc;
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.popup-grid button:hover {
+    background-color: #4fb0ff;
+}
+
+.icon-btn.active .circle {
+    width: 90px;
+    height: 60px;
+    border-radius: 0 30px 30px 0;
+    background-color: #1f2a40;
+    color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    flex-shrink: 0;
+}
+
+.icon-btn.active .circle > * {
+    display: none;
+}
+
+.icon-btn.active .circle::before {
+    content: '×';
+    visibility: visible;
+    font-size: 20px;
+    line-height: 60px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    user-select: none;
+    color: white;
+    font-weight: bold;
 }
 
 /* 뉴스, 공지란, 컴공과 */
@@ -328,7 +424,7 @@ header {
     margin: 20px 0;
 }
 
-/* 왼쪽박스 */
+/* 뉴스, 공지란, 컴공과 // 왼쪽박스 */
 .left-box {
     background: #fff;
     padding: 47px 30px 20px 250px;
@@ -405,7 +501,7 @@ header {
 }
 
 .notice-list {
-    max-height: 500px;
+    max-height: 480px;
     overflow-y: auto;
     padding-top: 10px;
     scrollbar-width: thin;
@@ -454,7 +550,7 @@ header {
 .text-box h3 {
     margin: 0 0 5px 0;
     font-size: 20px;
-    color: #333;
+    color: #000000;
     position: relative;
     white-space: nowrap;
     overflow: hidden;
@@ -489,8 +585,7 @@ header {
     text-overflow: ellipsis;
 }
 
-
-/* 오른쪽 박스 */
+/* 뉴스, 공지란, 컴공과 // 오른쪽박스 */
 .right-box {
     flex: 1;
 }
