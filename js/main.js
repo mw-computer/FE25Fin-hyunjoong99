@@ -61,3 +61,33 @@ function togglePopup(button) {
     }
 }
 
+// 헤더 이미지 변경 코드
+const header = document.querySelector("header");
+const nav = document.querySelector(".top-nav");
+const images = document.querySelectorAll(".hover-img");  // 기존 이미지 hover 처리용
+
+// nav에 마우스 올렸을 때 헤더 배경, 텍스트 색 변경 위해 클래스 토글
+nav.addEventListener("mouseenter", () => {
+    header.classList.add("nav-hover");
+
+    // 이미지 src 변경 (hover)
+    images.forEach(img => {
+        const hoverSrc = img.getAttribute("data-hover");
+        if (hoverSrc) {
+            img.setAttribute("data-original", img.src); // 원래 경로 저장
+            img.src = hoverSrc;
+        }
+    });
+});
+
+nav.addEventListener("mouseleave", () => {
+    header.classList.remove("nav-hover");
+
+    // 이미지 src 원복
+    images.forEach(img => {
+        const originalSrc = img.getAttribute("data-original");
+        if (originalSrc) {
+            img.src = originalSrc;
+        }
+    });
+});

@@ -28,6 +28,7 @@ body {
 header {
     background-color: transparent;
     display: flex;
+    height: 80px;
     justify-content: space-between;
     align-items: center;
     padding: 20px 50px;
@@ -35,6 +36,24 @@ header {
     position: relative;
     z-index: 2;
     border-bottom: 1px solid rgba(255, 255, 255, 0.151);
+    transition: background-color 0.3s ease, padding 0.3s ease, color 0.3s ease;
+}
+
+header.nav-hover {
+    background-color: white;
+    padding: 20px 50px;
+    color: black;
+}
+
+/* nav-hover일 때 내부 텍스트 색상 */
+header.nav-hover .logo-name,
+header.nav-hover .top-nav a,
+header.nav-hover .icon-with-label {
+    color: black;
+}
+
+.hover-img {
+    cursor: pointer;
 }
 
 /* 헤더 좌측 목원대 로고랑 문구 */
@@ -336,7 +355,7 @@ header {
     width: 500px;
     max-width: 90%;
     position: relative;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .popup-content h2 {
@@ -348,8 +367,8 @@ header {
 .popup-content h2::after {
     content: "";
     position: absolute;
-    top: 50%; 
-    left: 110%; 
+    top: 50%;
+    left: 110%;
     transform: translateY(-50%);
     width: 270px;
     height: 2px;
@@ -399,7 +418,7 @@ header {
     flex-shrink: 0;
 }
 
-.icon-btn.active .circle > * {
+.icon-btn.active .circle>* {
     display: none;
 }
 
