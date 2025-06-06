@@ -61,7 +61,7 @@ function togglePopup(button) {
     }
 }
 
-// 헤더 이미지 변경 코드 및 모달달ㄷ
+// 헤더 이미지 변경 코드 및 모달
 const header = document.querySelector("header");
 const nav = document.querySelector(".top-nav");
 const modal = document.getElementById("navModal");
@@ -135,6 +135,3 @@ nav.addEventListener("mouseleave", handleMouseLeave);
 
 modal.addEventListener("mouseenter", showModal);
 modal.addEventListener("mouseleave", handleMouseLeave);
-
-
-// 커밋오류테스트 ㅇㄴㅁㅇㅁㄴㅇㄴㅁㅇㅇ

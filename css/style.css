@@ -858,6 +858,7 @@ hr {
     outline: 1px solid white;
 }
 
+/* 뒷배경 흐리게 해주는거 */
 .overlay {
   position: fixed;
   top: 0; left: 0; right: 0; bottom: 0;
@@ -871,5 +872,3 @@ hr {
   opacity: 5;
   pointer-events: none;
 }
-
-/* 커밋오류테스트 */
