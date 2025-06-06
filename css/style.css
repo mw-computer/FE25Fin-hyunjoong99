@@ -173,7 +173,7 @@ header.nav-hover .icon-with-label {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     z-index: 10;
     height: 420px; /* 임시 높이, 조정 가능 */
-    display: flex;
+    display: none;
     justify-content: center;
 }
 

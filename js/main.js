@@ -50,7 +50,7 @@ function togglePopup(button) {
         function outsideClickListener(event) {
             if (!popup.contains(event.target) && !button.contains(event.target)) {
                 popup.style.display = "none";
-                button.classList.remove('active');  // 닫힐 때 제거
+                button.classList.remove('active');
                 document.removeEventListener('click', outsideClickListener);
             }
         }
@@ -61,7 +61,7 @@ function togglePopup(button) {
     }
 }
 
-// 헤더 이미지 변경 코드 및 모달달
+// 헤더 이미지 변경 코드 및 모달달ㄷ
 const header = document.querySelector("header");
 const nav = document.querySelector(".top-nav");
 const modal = document.getElementById("navModal");
@@ -84,7 +84,6 @@ function showModal() {
     images.forEach(img => {
         const hoverSrc = img.getAttribute("data-hover");
         if (hoverSrc) {
-            // 이미 오리지널 이미지가 저장돼 있지 않은 경우만 저장
             if (!img.hasAttribute("data-original")) {
                 img.setAttribute("data-original", img.src);
             }
@@ -111,7 +110,6 @@ function hideModal() {
     contentToBlur.forEach(el => el.classList.remove("blur-background"));
 }
 
-// relatedTarget 체크 함수 (이동한 요소가 nav, modal 인지만 체크, overlay 제외)
 function isMovingInside(event) {
     const toElement = event.relatedTarget;
     if (!toElement) return false;
