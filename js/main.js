@@ -135,3 +135,6 @@ nav.addEventListener("mouseleave", handleMouseLeave);
 
 modal.addEventListener("mouseenter", showModal);
 modal.addEventListener("mouseleave", handleMouseLeave);
+
+
+// 커밋오류테스트 ㅇㄴㅁㅇㅁㄴㅇㄴㅁㅇㅇ
