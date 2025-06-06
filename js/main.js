@@ -14,3 +14,23 @@ window.addEventListener('scroll', () => {
     lastScrollY = currentScrollY;
     scrollBtn.style.bottom = targetBottom + 'px';
 });
+
+// 푸터 버튼(페이지 상단으로 이동하는 버튼임임)
+function scrollFooterToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// 공지사항 드랍박스 필터 코드
+function filterNotices() {
+    const filter = document.getElementById('noticeFilter').value;
+    const items = document.querySelectorAll('.notice-item');
+
+    items.forEach(item => {
+        const type = item.getAttribute('data-type');
+        if (filter === 'all' || type === filter) {
+            item.style.display = 'flex';
+        } else {
+            item.style.display = 'none';
+        }
+    });
+}

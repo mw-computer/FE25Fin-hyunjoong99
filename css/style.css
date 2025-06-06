@@ -175,6 +175,23 @@ header {
     white-space: nowrap;
 }
 
+@keyframes fadeUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.banner-text h1 {
+    opacity: 0;
+    animation: fadeUp 1s ease-out forwards;
+}
+
 .main-nav {
     position: static;
     margin: 20px auto;
@@ -311,20 +328,171 @@ header {
     margin: 20px 0;
 }
 
+/* 왼쪽박스 */
 .left-box {
-    flex: 1.5;
-    background-color: #ffffff;
-    padding: 20px;
+    background: #fff;
+    padding: 47px 30px 20px 250px;
+    width: 100%;
+    max-width: 1150px;
+    box-sizing: border-box;
 }
 
+.notice-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.notice-title {
+    display: flex;
+    align-items: center;
+    font-size: 35px;
+    font-weight: bold;
+    position: relative;
+}
+
+.title-text {
+    margin-right: 8px;
+}
+
+.blue-dot {
+    width: 8px;
+    height: 8px;
+    background-color: #4fb0ff;
+    border-radius: 50%;
+    margin-top: -8px;
+}
+
+.notice-tag {
+    color: #4fb0ff;
+    font-size: 16px;
+    font-weight: normal;
+    margin-left: 12px;
+}
+
+.notice-header select {
+    padding: 5px 10px;
+    padding-right: 30px;
+    font-size: 15px;
+    border: none;
+    border-bottom: 2px solid #000000;
+    background: transparent;
+    outline: none;
+    text-align: left;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    position: relative;
+    width: 160px;
+    cursor: pointer;
+}
+
+.notice-header {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.notice-header::after {
+    content: "▼";
+    position: absolute;
+    right: 5px;
+    pointer-events: none;
+    font-size: 8px;
+    color: #000;
+    user-select: none;
+}
+
+.notice-list {
+    max-height: 500px;
+    overflow-y: auto;
+    padding-top: 10px;
+    scrollbar-width: thin;
+    scrollbar-color: #888 #f1f1f1;
+}
+
+.notice-item {
+    display: flex;
+    border-bottom: 1px solid #f0f0f0;
+    padding: 30px 0;
+}
+
+.date-box {
+    width: 70px;
+    min-width: 80px;
+    background-color: #ffffff;
+    color: #333;
+    font-weight: bold;
+    text-align: center;
+    padding: 8px 4px;
+    margin-right: 13px;
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 3px solid #c9c9c9;
+}
+
+.date-box .day {
+    font-size: 30px;
+    font-weight: bold;
+    line-height: 1.2;
+}
+
+.date-box .month-year {
+    font-size: 12px;
+    color: #666;
+    margin-top: 3px;
+}
+
+.text-box {
+    flex: 1;
+    min-width: 0;
+}
+
+.text-box h3 {
+    margin: 0 0 5px 0;
+    font-size: 20px;
+    color: #333;
+    position: relative;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.notice-item[data-type="notice"] .text-box h3 {
+    padding-left: 70px;
+    font-weight: bold;
+}
+
+.notice-item[data-type="notice"] .text-box h3::before {
+    content: "공지사항";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #007de4;
+    font-size: 15px;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.text-box p {
+    margin: 0 0 12px 0;
+    font-size: 14px;
+    color: #666;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+/* 오른쪽 박스 */
 .right-box {
     flex: 1;
-}
-
-.notice-news {
-    background-color: #fff;
-    border: 1px solid #ccc;
-    padding: 15px;
 }
 
 .image-box img {
@@ -491,7 +659,7 @@ hr {
 .footer-bottom {
     color: #ccc;
     line-height: 1.5;
-    max-width: none; 
+    max-width: none;
     margin-left: 0;
     margin-right: auto;
     margin-top: 10px;
@@ -499,4 +667,19 @@ hr {
     text-align: left;
     position: relative;
     top: -20px;
+}
+
+.footer-scroll-top-btn {
+    position: absolute;
+    bottom: 80px;
+    right: 10px;
+    width: 45px;
+    height: 45px;
+    background-color: #000f20;
+    color: white;
+    font-size: 20px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    outline: 1px solid white;
 }

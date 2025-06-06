@@ -75,13 +75,64 @@
 		<!-- 뉴스/공지란 및 컴공과 소개 -->
 		<div class="two-container">
 			<div class="left-box">
-				<h2>공지사항 및 뉴스</h2>
-				<div class="notice-news">
-					<p>여기에 공지사항 및 뉴스 내용을 넣으세요.</p>
-					<p>여기에 공지사항 및 뉴스 내용을 넣으세요.</p>
-					<p>여기에 공지사항 및 뉴스 내용을 넣으세요.</p>
-					<p>여기에 공지사항 및 뉴스 내용을 넣으세요.</p>
-					<p>여기에 공지사항 및 뉴스 내용을 넣으세요.</p>
+				<div class="notice-header">
+					<div class="notice-title">
+						<span class="title-text">NEWS</span>
+						<span class="blue-dot"></span>
+					</div>
+					<select id="noticeFilter" onchange="filterNotices()">
+						<option value="all">전체소식</option>
+						<option value="notice">공지사항</option>
+					</select>
+				</div>
+
+				<div class="notice-list">
+					<div class="notice-item" data-type="notice">
+						<div class="date-box">
+							<div class="day">27</div>
+							<div class="month-year">2025-05</div>
+						</div>
+						<div class="text-box">
+							<h3>[1~4학년 대상] 실전 역량 점검! PCSQL 코딩테스트 안내</h3>
+							<p>컴퓨터공학과 재학생 여러분!!
+								자신의 코딩 실력을 점검하고 성장의 발판을 마련할 수 있는 프로그래머스의 PCSQL（MySQL or Oracle) 코딩테스트를 무료로 선착순 50명 접수하여
+								실시하오니, 전 학년 학생들의 많은 참여 바랍니다.</p>
+						</div>
+					</div>
+					<div class="notice-item" data-type="notice">
+						<div class="date-box">
+							<div class="day">23</div>
+							<div class="month-year">2025-05</div>
+						</div>
+						<div class="text-box">
+							<h3>[중요] 2025 SW중심대학 디지털 경진대회 참가신청 안내</h3>
+							<p>안녕하십니까! 목원대학교 SW중심대학 사업 책임자 여상수 교수입니다. 2025년 6월부터 우리대학이 SW중심대학 사업에 선정되어 앞으로 6년간 55억 이상의
+								지원을 받게 되었습니다. 참여하는 학과는 컴퓨터공학과, 게임소프트웨어공학과, AI응용학과 등 3개 SW계열학과와 연극영화영상학부, 웹툰학과, 애니메이션학과,
+								게임콘텐츠학과 등 4개의 비SW계열학과입니다.</p>
+						</div>
+					</div>
+					<div class="notice-item" data-type="notice">
+						<div class="date-box">
+							<div class="day">20</div>
+							<div class="month-year">2025-05</div>
+						</div>
+						<div class="text-box">
+							<h3>[필독] 2025년 SW아카데미사업 종료! 웹프론트엔드과정 마지막 신청 받습니다!</h3>
+							<p>학과장 여상수 교수입니다. 목원대 대학기업협력형 SW아카데미사업이 올해로 끝이납니다. 마지막 교육생 모집입니다. 많은 관심과 신청바랍니다. SW전문인재 양성을
+								위한 SW아카데미 (대전,충남지역 대학 재학생/졸업생 신청 가능)</p>
+						</div>
+					</div>
+					<div class="notice-item" data-type="notice">
+						<div class="date-box">
+							<div class="day">12</div>
+							<div class="month-year">2025-05</div>
+						</div>
+						<div class="text-box">
+							<h3>** 배리어프리 앱개발 콘테스트 ** 주최: 현대오토에버,서울사회복지공동모금회 / 주관: 사단법인 그린라이트</h3>
+							<p>대학생 공모전 ‘배리어프리 앱개발 콘테스트’는 현대오토에버와 서울사회복지공동모금회가 지원, 사단법인 그린라이트가 주관, 과학기술정보통신부와 교육부 산하
+								국립특수교육원이 후원하여 사회취약계층의 이동 및 생활 편의를 증진하기 위해 대학생들이 직접 앱을 기획하고 제작할 수 있도록 지원하고 있습니다. </p>
+						</div>
+					</div>
 				</div>
 			</div>
 
@@ -170,6 +221,7 @@
 					<p>© 2025 1851027 김현중. All rights reserved. 웹화면구현 기말과제</p>
 					<p>이미지 출처: 목원대 컴퓨터공학 웹페이지</p>
 				</div>
+				<button class="footer-scroll-top-btn" onclick="scrollFooterToTop()" aria-label="상단으로 이동">↑</button>
 			</div>
 		</footer>
 
