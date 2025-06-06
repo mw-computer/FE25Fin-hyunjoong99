@@ -28,12 +28,10 @@ function togglePopup(button) {
 
     const isVisible = popup.style.display === "block";
 
-    // 모든 팝업 닫기
     document.querySelectorAll('.popup-box').forEach(el => {
         el.style.display = "none";
     });
 
-    // 모든 버튼에서 active 클래스 제거
     document.querySelectorAll('.side-icons .icon-btn').forEach(btn => {
         btn.classList.remove('active');
     });
@@ -47,7 +45,6 @@ function togglePopup(button) {
         popup.style.right = `${window.innerWidth - rect.left - 50}px`;
         popup.style.display = "block";
 
-        // 활성화 클래스 추가
         button.classList.add('active');
 
         function outsideClickListener(event) {
