@@ -69,7 +69,7 @@ const images = document.querySelectorAll(".hover-img");
 
 const overlay = document.querySelector(".overlay");
 const contentToBlur = Array.from(document.querySelectorAll("body > div, body > section"))
-  .filter(el => !el.matches("header, .top-nav, #navModal, .overlay"));
+    .filter(el => !el.matches("header, .top-nav, #navModal, .overlay"));
 
 let hideTimeout = null;
 
@@ -135,3 +135,62 @@ nav.addEventListener("mouseleave", handleMouseLeave);
 
 modal.addEventListener("mouseenter", showModal);
 modal.addEventListener("mouseleave", handleMouseLeave);
+
+// ㅇㄴㅁㅇ
+
+document.addEventListener("DOMContentLoaded", () => {
+    const navItems = document.querySelectorAll(".top-nav ul li");
+    const modal = document.getElementById("navModal");
+    const modalColumns = modal.querySelectorAll(".modal-column");
+    const modalTitles = modal.querySelectorAll("h4");
+
+    let currentIndex = -1;
+    let hoverTimeout;
+
+    function activateColumn(index) {
+        resetActiveStates();
+        if (modalColumns[index]) modalColumns[index].classList.add("active");
+        if (modalTitles[index]) modalTitles[index].classList.add("active");
+        navItems[index].querySelector("a").classList.add("active"); // nav 폰트 유지
+        currentIndex = index;
+    }
+
+    function resetActiveStates() {
+        modalColumns.forEach(c => c.classList.remove("active"));
+        modalTitles.forEach(h => h.classList.remove("active"));
+        navItems.forEach(item => item.querySelector("a").classList.remove("active"));
+    }
+
+    navItems.forEach((item, index) => {
+        item.addEventListener("mouseenter", () => {
+            clearTimeout(hoverTimeout);
+            modal.style.display = "flex";
+            activateColumn(index);
+        });
+
+        item.addEventListener("mouseleave", () => {
+            hoverTimeout = setTimeout(() => {
+                if (!modal.matches(":hover")) {
+                    modal.style.display = "none";
+                    resetActiveStates();
+                }
+            }, 100);
+        });
+    });
+
+    modal.addEventListener("mouseenter", () => {
+        clearTimeout(hoverTimeout);
+    });
+
+    modal.addEventListener("mouseleave", () => {
+        modal.style.display = "none";
+        resetActiveStates();
+    });
+
+    modalColumns.forEach((column, index) => {
+        column.addEventListener("mouseenter", () => {
+            activateColumn(index);
+        });
+    });
+});
+

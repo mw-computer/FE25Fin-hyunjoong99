@@ -44,7 +44,6 @@ header.nav-hover {
     color: black;
 }
 
-/* nav-hover일 때 내부 텍스트 색상 */
 header.nav-hover .logo-name,
 header.nav-hover .top-nav a,
 header.nav-hover .icon-with-label {
@@ -168,57 +167,125 @@ header.nav-hover .icon-with-label {
     width: 100%;
     background-color: rgb(245, 245, 245);
     border-top: 1px solid #e4e4e4;
-    display: none;
-    padding: 20px 50px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    z-index: 10;
-    height: 420px;
     display: none;
-    justify-content: center;
+    padding: 0;
+    height: 420px;
+    z-index: 10;
 }
 
 .modal-content {
     display: flex;
     justify-content: center;
-    gap: 20px;
-    padding: 5px 40px;
-    background-color: rgb(245, 245, 245);
+    align-items: stretch;
+    width: 100%;
+    max-width: 1500px;
+    margin: 0 auto;
+    height: 100%;
+    gap: 0;
 }
 
 .modal-column {
-    flex: 0 0 180px;
-    padding: 10px 0px;
-    min-height: 393px;
+    flex: 1;
+    height: 100%;
+    padding: 25px 20px;
+    box-sizing: border-box;
+    border-left: 1px solid #e0e0e0;
+    display: flex;
+    flex-direction: column;
+    background-color: transparent;
+    transition: background-color 0.3s ease;
 }
 
 .modal-column:not(:first-child) {
     border-left: 1px solid #e0e0e0;
     padding-left: 20px;
-    margin-left: 10px;
+    margin-left: 0;
 }
 
 .modal-column h4 {
     font-size: 20px;
+    padding-bottom: 5px;
     margin-bottom: 10px;
     border-bottom: 1px solid #000;
-    padding-bottom: 5px;
+    padding-left: 10px;
+    text-align: left;
 }
 
 .modal-column ul {
     padding: 0;
     margin: 0;
     list-style: none;
+    width: 100%;
 }
 
 .modal-column ul li {
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
 
 .modal-column ul li a {
-    font-size: 16px; 
-    line-height: 1.8;
+    font-size: 16px;
+    line-height: 1.6;
     text-decoration: none;
     color: #000;
+    display: block;
+    padding: 5px 0 5px 10px;
+    transition: background-color 0.3s, color 0.3s;
+    text-align: left;
+}
+
+/* 서브메뉴 관련 */
+:root {
+    --hover-color: #ff0000;
+    --hover-bg: white;
+    --submenu-hover-bg: #ff0000;
+    --submenu-hover-color: white;
+}
+
+.top-nav ul li:hover a {
+    color: var(--hover-color);
+}
+
+.modal-column h4.active {
+    color: var(--hover-color);
+}
+
+.modal-column.active {
+    background-color: var(--hover-bg);
+    transition: background-color 0.3s ease;
+}
+
+.modal-column:hover,
+.modal-column.active {
+    background-color: var(--hover-bg);
+    z-index: 1;
+}
+
+.modal-column:hover h4,
+.modal-column.active h4 {
+    border-bottom: none;
+}
+
+
+.modal-column:hover {
+    background-color: var(--hover-bg);
+    transition: background-color 0.3s ease;
+    background-color: white;
+    box-shadow: none;
+    z-index: 1;
+}
+
+.modal-column ul li a:hover {
+    background-color: var(--submenu-hover-bg);
+    color: var(--submenu-hover-color);
+}
+
+.top-nav ul li a.active {
+    color: var(--hover-color);
+}
+
+.modal-column:first-child {
+    border-left: none;
 }
 
 /* 가운대 배너? 메인? */
@@ -860,15 +927,113 @@ hr {
 
 /* 뒷배경 흐리게 해주는거 */
 .overlay {
-  position: fixed;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background-color: rgba(0,0,0,0.5);
-  z-index: 5;
-  opacity: 0;
-  pointer-events: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 5;
+    opacity: 0;
+    pointer-events: none;
 }
 
 .overlay.active {
-  opacity: 5;
-  pointer-events: none;
+    opacity: 5;
+    pointer-events: none;
+}
+
+
+/* 반응형 */
+@media (max-width: 992px) {
+    .top-nav ul {
+        gap: 40px;
+        padding-left: 30px;
+    }
+
+    .main-nav li a {
+        width: 140px;
+        height: 140px;
+        font-size: 16px;
+    }
+
+    .banner-text {
+        font-size: 36px;
+    }
+
+    .popup-content {
+        padding: 20px;
+        width: 90%;
+    }
+
+    .footer-top {
+        gap: 100px;
+    }
+
+    .left-box {
+        padding-left: 50px;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        height: auto;
+        padding: 10px 20px;
+    }
+
+    .top-nav {
+        padding-left: 0;
+        justify-content: center;
+    }
+
+    .top-nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .main-nav ul {
+        flex-direction: column;
+    }
+
+    .main-nav li a {
+        width: 90vw;
+        height: 120px;
+    }
+
+    .banner-text {
+        font-size: 28px;
+        white-space: normal;
+    }
+
+    .modal-content {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .modal-column {
+        border-left: none !important;
+        border-top: 1px solid #ddd;
+        padding: 20px;
+    }
+
+    .footer-top {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .footer-bottom {
+        padding-left: 20px;
+        text-align: center;
+    }
+
+    .notice-title {
+        font-size: 24px;
+    }
+
+    .notice-header select {
+        width: 120px;
+        font-size: 14px;
+    }
 }
